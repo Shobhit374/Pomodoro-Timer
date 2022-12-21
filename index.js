@@ -3,12 +3,14 @@ const pomo = document.getElementById("pomo");
 const short = document.getElementById("short");
 const long = document.getElementById("long");
 const stop = document.getElementById("stop");
+const pause = document.getElementById("pause");
 const bip = new Audio('assets/beep.mp3');
+
 let pomo_t = 25*60;
 let short_t = 5*60;
 let long_t = 20*60;
 let prev;
-
+let timer,curTask,curNo;
 function stopp(){
     if(prev)clearInterval(prev);
     time.textContent = "00:00";
@@ -18,7 +20,10 @@ function stopp(){
 }
 
 function startTimer(duration, called, no){
-    let timer = duration, min, sec;
+    let min, sec;
+    timer = duration;
+    curTask = called;
+    curNo = no;
     called.classList.toggle("btn2");
     prev =setInterval(() => {
         min = parseInt(timer/60,10);
@@ -76,4 +81,18 @@ long.addEventListener('click', () => {
 })
 
 stop.addEventListener('click',stopp)
+
+pause.addEventListener('click',() =>{
+    if(pause.classList.contains("pause")){
+        if(prev)clearInterval(prev);
+        pause.textContent = "START";
+        pause.classList.remove("pause");
+    }
+    else{
+        curTask.classList.toggle("btn2");
+        startTimer(timer,curTask,curNo);
+        pause.textContent = "PAUSE";
+        pause.classList.add("pause");
+    }
+})
 

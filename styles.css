@@ -35,6 +35,7 @@ body {
     background: #D14141;
     border-radius: 5px;
     margin-top: 20px;
+    padding: 10px;
 }
 
 #clock{
@@ -52,7 +53,11 @@ body {
     font-size: 24px;
 }
 
-#stop{
+#time{
+    margin: 15px 0px;;
+}
+
+#stop,#pause{
     font-family: 'arial';
     background: rgb(83, 83, 83);
     border: 1px solid black;
