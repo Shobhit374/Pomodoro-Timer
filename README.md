@@ -6,5 +6,5 @@ A Chrome extension featuring a very basic pomodoro timer with features as
 * A stop button to completely reset the timer.  
   
 View the tab version here : https://shobhit374.github.io/Pomodoro-Timer/  
-Feel Free to download and use as a chrome Extension.
+I am currently working on some issues and trying to make this usable as a chrome extension.
 
